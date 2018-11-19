@@ -68,10 +68,67 @@ BB2(){
    f2.add(b2);
    
    /* ***************************************** */
+	
+   //THIS IS THE page WHERE PATIENT SHALL ENTER DIABETES VALUES (frame f4)
+   
+   l5 = new JLabel("No. of times pregnant :");
+   l5.setBounds(10,10,200,30);
+   nop = new JTextField();
+   nop.setBounds(160,10,100,30);
+
+   l6 = new JLabel("Plasma glucose conc. :");
+   l6.setBounds(350,10,200,30);
+   pgc = new JTextField();
+   pgc.setBounds(490,10,100,30);
+
+   l7 = new JLabel("Blood pressure :");
+   l7.setBounds(10,90,200,30);
+   bp = new JTextField();
+   bp.setBounds(160,90,100,30);
+
+   l8 = new JLabel("Triceps skin fold :");
+   l8.setBounds(350,90,200,30);
+   tsf = new JTextField();
+   tsf.setBounds(490,90,100,30);
+
+   l9 = new JLabel("Serum insulin :");
+   l9.setBounds(10,170,200,30);
+   si = new JTextField();
+   si.setBounds(160,170,100,30);
+
+   l10 = new JLabel("Body mass index :");
+   l10.setBounds(350,170,200,30);
+   bmi = new JTextField();
+   bmi.setBounds(490,170,100,30);
+
+   l11 = new JLabel("Diabetes pedigree func :");
+   l11.setBounds(10,250,200,30);
+   dpf = new JTextField();
+   dpf.setBounds(160,250,100,30);
+   
+   l12 = new JLabel("Age :");
+   l12.setBounds(350,250,200,30);
+   age = new JTextField();
+   age.setBounds(490,250,100,30);
+   
+   JButton b4=new JButton("SUBMIT");
+   b4.setBounds(230, 350, 150, 30);
+   
+   f4.add(l5); f4.add(nop);
+   f4.add(l6); f4.add(pgc);
+   f4.add(l7); f4.add(bp);
+   f4.add(l8); f4.add(tsf);
+   f4.add(l9); f4.add(si);
+   f4.add(l10); f4.add(bmi);
+   f4.add(l11); f4.add(dpf);
+   f4.add(l12); f4.add(age); f4.add(b4);
+    
+   
+   /* ***************************************** */
 
     b1.addActionListener(this);
     b2.addActionListener(this);
-    
+    b4.addActionListener(this);
     
     f1.setLayout(null);
     f2.setLayout(null);
@@ -80,13 +137,13 @@ BB2(){
     
     f1.setSize(500,500);
     f2.setSize(500,500);
-    f3.setSize(500,500);
-    f4.setSize(1000,1000);
+    f3.setSize(1000,1000);
+    f4.setSize(750,500);
     
     f1.setVisible(true);  
     
-    
 }  
+
 public static void main(String[] args) {  
     new BB();  
 }
