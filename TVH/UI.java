@@ -3,14 +3,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;  
   
-public class BB2 implements ActionListener{  
-JFrame f1,f2,f3,f4;  
-JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l15,l16,l17;
-JTextField pname,phone,p_age,dval,nop,pgc;
-JRadioButton rb1,rb2; 
-JButton sign_submit;
+public class UI implements ActionListener{  
+	JFrame f1,f2,f3,f4;  
+	JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l15,l16,l17;
+	JTextField pname,phone,p_age,dval,nop,pgc,bp,tsf,si,bmi,dpf,age;
+	JRadioButton rb1,rb2,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t; 
+	JButton sign_submit;
 	
-BB2(){  
+UI(){  
     f1=new JFrame(); //WELCOME PAGE 
     f2=new JFrame(); //ENTERING DETAILS
     f3=new JFrame(); //CANCER PATIENT DIAGNOSIS
@@ -145,7 +145,7 @@ BB2(){
 }  
 
 public static void main(String[] args) {  
-    new BB();  
+    new UI();  
 }
 
 @Override
