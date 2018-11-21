@@ -9,6 +9,7 @@ public class UI implements ActionListener{
 	JTextField pname,phone,p_age,dval,nop,pgc,bp,tsf,si,bmi,dpf,age;
 	JRadioButton rb1,rb2,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay; 
 	JButton sign_submit;
+	ButtonGroup bg,bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9;
 	
 	UI(){  
     f1=new JFrame(); //WELCOME PAGE 
@@ -74,164 +75,165 @@ public class UI implements ActionListener{
  //THIS IS THE page WHERE PATIENT SHALL ENTER CANCER DATASET ATTRIBUT VALUES (frame f3)
    
    l13 = new JLabel("Age :");
-   l13.setBounds(10,10,200,30);
+   l13.setBounds(10,10,200,30); 
    a=new JRadioButton("10-19");    
-   a.setBounds(50,10,60,30);    
-   b=new JRadioButton("20-29"); 
-   b.setBounds(110,10,60,30);   
+   a.setBounds(50,10,60,30);   a.setActionCommand("10-19");
+   b=new JRadioButton("20-29");
+   b.setBounds(110,10,60,30);  b.setActionCommand("20-29");
    c=new JRadioButton("30-39"); 
-   c.setBounds(170,10,60,30);   
+   c.setBounds(170,10,60,30);  c.setActionCommand("30-39");   
    d=new JRadioButton("40-49"); 
-   d.setBounds(230,10,60,30);
+   d.setBounds(230,10,60,30);  d.setActionCommand("40-49");
    e=new JRadioButton("50-59"); 
-   e.setBounds(290,10,60,30);   
+   e.setBounds(290,10,60,30);  e.setActionCommand("50-59");   
    f=new JRadioButton("60-69"); 
-   f.setBounds(350,10,60,30);   
+   f.setBounds(350,10,60,30);  f.setActionCommand("60-69");   
    g=new JRadioButton("70-79"); 
-   g.setBounds(410,10,60,30);   
+   g.setBounds(410,10,60,30);  g.setActionCommand("70-79");   
    h=new JRadioButton("80-89"); 
-   h.setBounds(470,10,60,30);   
+   h.setBounds(470,10,60,30);  h.setActionCommand("80-89");   
    i=new JRadioButton("90-99"); 
-   i.setBounds(530,10,60,30);   
+   i.setBounds(530,10,60,30);  i.setActionCommand("90-99");   
      
-   ButtonGroup bg1=new ButtonGroup();    
+   bg1=new ButtonGroup();    
    bg1.add(a);bg1.add(b);bg1.add(c);bg1.add(d);bg1.add(e);bg1.add(f);bg1.add(g);bg1.add(h);    
    bg1.add(i);
    JButton b3=new JButton("SUBMIT");
    b3.setBounds(230, 350, 150, 30);
    
    l14=new JLabel("menopause : ");
-   l14.setBounds(10,40,100,30);
+   l14.setBounds(10,40,100,30);    
    j=new JRadioButton("lt40");    
-   j.setBounds(90,40,60,30);    
+   j.setBounds(90,40,60,30);  j.setActionCommand("lt40");    
    k=new JRadioButton("ge40"); 
-   k.setBounds(150,40,60,30);   
+   k.setBounds(150,40,60,30);  k.setActionCommand("ge40");   
    l=new JRadioButton("premeno"); 
-   l.setBounds(210,40,100,30);   
+   l.setBounds(210,40,100,30);  l.setActionCommand("premeno");   
   
-   ButtonGroup bg2=new ButtonGroup();    
+   bg2=new ButtonGroup();    
    bg2.add(j);bg2.add(k);bg2.add(l);
    
    l15=new JLabel("tumor-size : ");
-   l15.setBounds(10,70,80,30);
+   l15.setBounds(10,70,80,30);  
    m=new JRadioButton("0-4");
-   m.setBounds(90,70,60,30); 
+   m.setBounds(90,70,60,30);  m.setActionCommand("0-4"); 
    n=new JRadioButton("5-9");
-   n.setBounds(150,70,60,30); 
+   n.setBounds(150,70,60,30);  n.setActionCommand("5-9"); 
    o=new JRadioButton("10-14");
-   o.setBounds(210,70,60,30); 
+   o.setBounds(210,70,60,30);  o.setActionCommand("10-14"); 
    p=new JRadioButton("15-19");
-   p.setBounds(270,70,60,30); 
+   p.setBounds(270,70,60,30);  p.setActionCommand("15-19"); 
    q=new JRadioButton("20-24");
-   q.setBounds(330,70,60,30); 
+   q.setBounds(330,70,60,30);  q.setActionCommand("20-24"); 
    r=new JRadioButton("25-29");
-   r.setBounds(390,70,60,30); 
+   r.setBounds(390,70,60,30);  r.setActionCommand("25-29"); 
    s=new JRadioButton("30-34");
-   s.setBounds(450,70,60,30); 
+   s.setBounds(450,70,60,30);  s.setActionCommand("30-34"); 
    t=new JRadioButton("35-39");
-   t.setBounds(510,70,60,30); 
+   t.setBounds(510,70,60,30);  t.setActionCommand("35-39"); 
    u=new JRadioButton("40-44");
-   u.setBounds(570,70,60,30); 
+   u.setBounds(570,70,60,30);  u.setActionCommand("40-44"); 
    v=new JRadioButton("45-49");
-   v.setBounds(630,70,60,30); 
+   v.setBounds(630,70,60,30);  v.setActionCommand("45-49"); 
    w=new JRadioButton("50-54");
-   w.setBounds(690,70,60,30); 
+   w.setBounds(690,70,60,30);  w.setActionCommand("50-54"); 
    x=new JRadioButton("55-59");
-   x.setBounds(750,70,60,30); 
+   x.setBounds(750,70,60,30);  x.setActionCommand("55-59"); 
    
-   ButtonGroup bg3=new ButtonGroup();    
+   bg3=new ButtonGroup();    
    bg3.add(m);bg3.add(n);bg3.add(o);bg3.add(p);bg3.add(q);bg3.add(r);bg3.add(s);
    bg3.add(t);bg3.add(u);bg3.add(v);bg3.add(w);bg3.add(x);
    
    
    l16=new JLabel("node-caps : ");
-   l16.setBounds(10,100,80,30);
+   l16.setBounds(10,100,80,30);  
    y=new JRadioButton("yes");
-   y.setBounds(90,100,60,30); 
+   y.setBounds(90,100,60,30);  y.setActionCommand("yes"); 
    z=new JRadioButton("no");
-   z.setBounds(150,100,60,30); 
+   z.setBounds(150,100,60,30);  z.setActionCommand("no"); 
      
-   ButtonGroup bg4=new ButtonGroup();    
+   bg4=new ButtonGroup();    
    bg4.add(y);bg4.add(z);
   
    l17=new JLabel("deg-malig : ");
-   l17.setBounds(10,130,80,30);
+   l17.setBounds(10,130,80,30);  
    aa=new JRadioButton("1");
-   aa.setBounds(90,130,60,30); 
+   aa.setBounds(90,130,60,30);  aa.setActionCommand("1"); 
    ab=new JRadioButton("2");
-   ab.setBounds(150,130,60,30); 
+   ab.setBounds(150,130,60,30);  ab.setActionCommand("2"); 
    ac=new JRadioButton("3");
-   ac.setBounds(210,130,60,30); 
+   ac.setBounds(210,130,60,30);  ac.setActionCommand("3"); 
        
-   ButtonGroup bg5=new ButtonGroup();    
+   bg5=new ButtonGroup();    
    bg5.add(aa);bg5.add(ab);bg5.add(ac);
-     l18=new JLabel("Breast : ");
-   l18.setBounds(10,160,80,30);
-   ad=new JRadioButton("left");
-   ad.setBounds(90,160,60,30); 
-   ae=new JRadioButton("right");
-   ae.setBounds(150,160,60,30); 
    
-   ButtonGroup bg6=new ButtonGroup();    
+   l18=new JLabel("Breast : ");
+   l18.setBounds(10,160,80,30);   
+   ad=new JRadioButton("left");
+   ad.setBounds(90,160,60,30);  ad.setActionCommand("left"); 
+   ae=new JRadioButton("right");
+   ae.setBounds(150,160,60,30);  ae.setActionCommand("right"); 
+   
+   bg6=new ButtonGroup();    
    bg6.add(ad);bg6.add(ae);
 
    l19=new JLabel("breast-quad : ");
-   l19.setBounds(10,190,80,30);
+   l19.setBounds(10,190,80,30);  
    af=new JRadioButton("left_up");
-   af.setBounds(90,190,80,30); 
+   af.setBounds(90,190,80,30);  af.setActionCommand("left_up"); 
    ag=new JRadioButton("left_low");
-   ag.setBounds(170,190,80,30); 
+   ag.setBounds(170,190,80,30);  ag.setActionCommand("left_low"); 
    ah=new JRadioButton("right_up");
-   ah.setBounds(250,190,80,30); 
+   ah.setBounds(250,190,80,30);  ah.setActionCommand("right_up"); 
    ai=new JRadioButton("right_low");
-   ai.setBounds(330,190,80,30); 
+   ai.setBounds(330,190,80,30);  ai.setActionCommand("right_low"); 
    aj=new JRadioButton("central");
-   aj.setBounds(410,190,80,30); 
+   aj.setBounds(410,190,80,30); aj .setActionCommand("central"); 
    
-   ButtonGroup bg7=new ButtonGroup();    
+   bg7=new ButtonGroup();    
    bg7.add(af);bg7.add(ag);bg7.add(ah);bg7.add(ai);bg7.add(aj);
    
    l20=new JLabel("irradiat : ");
-   l20.setBounds(10,220,80,30);
+   l20.setBounds(10,220,80,30);  
    ak=new JRadioButton("yes");
-   ak.setBounds(90,220,80,30); 
+   ak.setBounds(90,220,80,30);  ak.setActionCommand("yes"); 
    al=new JRadioButton("no");
-   al.setBounds(170,220,80,30); 
+   al.setBounds(170,220,80,30);  al.setActionCommand("no"); 
    
-   ButtonGroup bg8=new ButtonGroup();    
-   bg8.add(ak);bg7.add(al);  
+   bg8=new ButtonGroup();    
+   bg8.add(ak);bg8.add(al);  
 
    l21=new JLabel("inv-nodes : ");
-   l21.setBounds(10,250,80,30);
+   l21.setBounds(10,250,80,30);   
    am=new JRadioButton("0-2");
-   am.setBounds(90,250,60,30); 
+   am.setBounds(90,250,60,30);  am.setActionCommand("0-2");    
    an=new JRadioButton("3-5");
-   an.setBounds(150,250,60,30); 
+   an.setBounds(150,250,60,30);  an.setActionCommand("3-5"); 
    ao=new JRadioButton("6-8");
-   ao.setBounds(210,250,60,30); 
+   ao.setBounds(210,250,60,30);  ao.setActionCommand("6-8"); 
    ap=new JRadioButton("9-11");
-   ap.setBounds(270,250,60,30); 
+   ap.setBounds(270,250,60,30);  ap.setActionCommand("9-11"); 
    aq=new JRadioButton("12-14");
-   aq.setBounds(330,250,60,30); 
+   aq.setBounds(330,250,60,30);  aq.setActionCommand("12-14"); 
    ar=new JRadioButton("15-17");
-   ar.setBounds(390,250,60,30); 
+   ar.setBounds(390,250,60,30);  ar.setActionCommand("15-17"); 
    as=new JRadioButton("18-20");
-   as.setBounds(450,250,60,30); 
+   as.setBounds(450,250,60,30);  as.setActionCommand("18-20"); 
    at=new JRadioButton("21-23");
-   at.setBounds(510,250,60,30); 
+   at.setBounds(510,250,60,30);  at.setActionCommand("21-23"); 
    au=new JRadioButton("24-26");
-   au.setBounds(570,250,60,30); 
+   au.setBounds(570,250,60,30);  au.setActionCommand("24-26"); 
    av=new JRadioButton("27-29");
-   av.setBounds(630,250,60,30); 
+   av.setBounds(630,250,60,30);  av.setActionCommand("27-29"); 
    aw=new JRadioButton("30-32");
-   aw.setBounds(690,250,60,30); 
+   aw.setBounds(690,250,60,30);  aw.setActionCommand("30-32"); 
    ax=new JRadioButton("33-35");
-   ax.setBounds(750,250,60,30); 
+   ax.setBounds(750,250,60,30);  ax.setActionCommand("33-35"); 
    ay=new JRadioButton("36-39");
-   ay.setBounds(810,250,60,30); 
+   ay.setBounds(810,250,60,30);  ay.setActionCommand("36-39"); 
    
    
-   ButtonGroup bg9=new ButtonGroup();    
+   bg9=new ButtonGroup();    
    bg9.add(am);bg9.add(an);bg9.add(ao);bg9.add(ap);bg9.add(aq);bg9.add(ar);bg9.add(as);
    bg9.add(at);bg9.add(au);bg9.add(av);bg9.add(aw);bg9.add(ax);bg9.add(ay);
       
