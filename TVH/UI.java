@@ -2,6 +2,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+//import java.awt.Font;
+import javax.swing.JTextField;
+//import javax.swing.JPasswordField;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+
 public class UI implements ActionListener{  
 	JFrame f1,f2,f3,f4,f5,f6,f7,f8;  
 	JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,l21;
@@ -24,10 +34,19 @@ public class UI implements ActionListener{
     //THIS IS THE 1ST p_age THAT WILL OPEN UP .(frame f1) 
     
     l1 = new JLabel("WELCOME TO THE VIRTUAL HOSPITAL");
-    l1.setBounds(140,50, 300,100);  
+    l1.setBounds(140,80, 300,100);  
+   // l1.setFont(new Font("Tahoma", Font.BOLD, 13));
+	//l1.setForeground(Color.yellow);
+	
     JButton b1=new JButton("SIGN IN");
-    b1.setBounds(180,150, 100, 30);
+    b1.setBounds(180,180, 100, 30);
     
+
+	JLabel label_1 = new JLabel("");
+	label_1.setIcon(new ImageIcon(Login.class.getResource("/img/kb_img/doctor.png")));
+	label_1.setBounds(200,10,64,64);
+	f1.getContentPane().add(label_1);
+	
     f1.add(b1);
     f1.add(l1);
     
@@ -77,19 +96,19 @@ public class UI implements ActionListener{
    l13 = new JLabel("Age :");
    l13.setBounds(10,10,200,30); 
    a=new JRadioButton("10-19");    
-   a.setBounds(50,10,60,30);   a.setActionCommand("10-19");
+   a.setBounds(90,10,60,30);   a.setActionCommand("10-19");
    b=new JRadioButton("20-29");
-   b.setBounds(110,10,60,30);  b.setActionCommand("20-29");
+   b.setBounds(150,10,60,30);  b.setActionCommand("20-29");
    c=new JRadioButton("30-39"); 
-   c.setBounds(170,10,60,30);  c.setActionCommand("30-39");   
+   c.setBounds(210,10,60,30);  c.setActionCommand("30-39");   
    d=new JRadioButton("40-49"); 
-   d.setBounds(230,10,60,30);  d.setActionCommand("40-49");
+   d.setBounds(290,10,60,30);  d.setActionCommand("40-49");
    e=new JRadioButton("50-59"); 
-   e.setBounds(290,10,60,30);  e.setActionCommand("50-59");   
+   e.setBounds(350,10,60,30);  e.setActionCommand("50-59");   
    f=new JRadioButton("60-69"); 
-   f.setBounds(350,10,60,30);  f.setActionCommand("60-69");   
+   f.setBounds(410,10,60,30);  f.setActionCommand("60-69");   
    g=new JRadioButton("70-79"); 
-   g.setBounds(410,10,60,30);  g.setActionCommand("70-79");   
+   g.setBounds(470,10,60,30);  g.setActionCommand("70-79");   
    h=new JRadioButton("80-89"); 
    h.setBounds(470,10,60,30);  h.setActionCommand("80-89");   
    i=new JRadioButton("90-99"); 
@@ -99,7 +118,7 @@ public class UI implements ActionListener{
    bg1.add(a);bg1.add(b);bg1.add(c);bg1.add(d);bg1.add(e);bg1.add(f);bg1.add(g);bg1.add(h);    
    bg1.add(i);
    JButton b3=new JButton("SUBMIT");
-   b3.setBounds(230, 350, 150, 30);
+   b3.setBounds(330, 350, 150, 30);
    
    l14=new JLabel("menopause : ");
    l14.setBounds(10,40,100,30);    
@@ -343,7 +362,7 @@ public class UI implements ActionListener{
     
     f1.setSize(500,500);
     f2.setSize(500,500);
-    f3.setSize(1000,1000);
+    f3.setSize(900,500);
     f4.setSize(750,500);
     f5.setSize(750,500);
     f6.setSize(750,500);
