@@ -15,5 +15,10 @@ This is a mini project I've taken up in order to learn some basics of swings in 
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGTVf63Vm3XgOncMVSOy0-jSxdMT8KVJIc8WiWaevuWiPGe0Pm)
+
+Data preprocessing on Wisconsin breast cancer dataset: 
+
+![alt text](https://drive.google.com/open?id=0B_Jj7ENl2ZiUWGg4WlFWeVdaR0ZaaHZTUmlhRktPTXBWRl9B)
+
+Homepage
 
