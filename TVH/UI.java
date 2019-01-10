@@ -1,27 +1,29 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-//import java.awt.Font;
 import javax.swing.JTextField;
-//import javax.swing.JPasswordField;
 import javax.swing.JButton;
-import javax.swing.ImageIcon;
 
-public class UI implements ActionListener{  
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+
+public class BB implements ActionListener{ 
 	JFrame f1,f2,f3,f4,f5,f6,f7,f8;  
 	JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,l21;
-	JLabel la,lb,lc;
+	JLabel la,lb,lc,ld,le,lf,lg,lh,li;
 	JTextField pname,phone,p_age,dval,nop,pgc,bp,tsf,si,bmi,dpf,age;
 	JRadioButton rb1,rb2,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay; 
-	JButton sign_submit;
+	JButton back1,back2,back3;
 	ButtonGroup bg,bg1,bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9;
-	
-	UI(){  
+	int flag=0;
+	BB(){  
     f1=new JFrame(); //WELCOME PAGE 
     f2=new JFrame(); //ENTERING DETAILS
     f3=new JFrame(); //CANCER PATIENT DIAGNOSIS
@@ -41,12 +43,6 @@ public class UI implements ActionListener{
     JButton b1=new JButton("SIGN IN");
     b1.setBounds(180,180, 100, 30);
     
-
-	JLabel label_1 = new JLabel("");
-	label_1.setIcon(new ImageIcon(Login.class.getResource("/img/kb_img/doctor.png")));
-	label_1.setBounds(200,10,64,64);
-	f1.getContentPane().add(label_1);
-	
     f1.add(b1);
     f1.add(l1);
     
@@ -80,6 +76,10 @@ public class UI implements ActionListener{
    JButton b2=new JButton("SUBMIT DETAILS");
    b2.setBounds(180, 300, 150, 30);
    
+   back1=new JButton("BACK");
+   back1.setBounds(380,0,100,30);
+   
+   
    f2.add(l2);
    f2.add(pname);
    f2.add(l3);
@@ -89,6 +89,8 @@ public class UI implements ActionListener{
    f2.add(rb1);
    f2.add(rb2);
    f2.add(b2);
+   f2.add(back1);
+   
    
    /* ***************************************** */
  //THIS IS THE page WHERE PATIENT SHALL ENTER CANCER DATASET ATTRIBUT VALUES (frame f3)
@@ -117,6 +119,7 @@ public class UI implements ActionListener{
    bg1=new ButtonGroup();    
    bg1.add(a);bg1.add(b);bg1.add(c);bg1.add(d);bg1.add(e);bg1.add(f);bg1.add(g);bg1.add(h);    
    bg1.add(i);
+   
    JButton b3=new JButton("SUBMIT");
    b3.setBounds(330, 350, 150, 30);
    
@@ -271,6 +274,11 @@ public class UI implements ActionListener{
    f3.add(at);f3.add(au);f3.add(av);f3.add(aw);f3.add(ax);f3.add(ay);
      
    f3.add(b3);
+   
+   back2=new JButton("BACK");
+   back2.setBounds(800,0,100,30);
+   f3.add(back2);
+   
    /* ***************************************** */
    
  //THIS IS THE page WHERE PATIENT SHALL ENTER DIABETES DATASET ATTRIBUT VALUES (frame f4)
@@ -327,27 +335,60 @@ public class UI implements ActionListener{
    f4.add(l11); f4.add(dpf);
    f4.add(l12); f4.add(age); f4.add(b4);
     
-
-   /* ***************************************** */
-//PAGE TO DISPLAY IF DIABETES TESTED POSITIVE (FRAMEf7)
-   la = new JLabel("DIABETES TESTED POSITIVE");
-   la.setBounds(140,50, 300,100);  
-   f7.add(la);
-   /* ***************************************** */
-   
+   back3=new JButton("BACK");
+   back3.setBounds(650,0,100,30);
+   f4.add(back3);
    
 
    /* ***************************************** */
-//PAGE TO DISPLAY IF DIABETES TESTED POSITIVE (FRAMEf7)
-   la = new JLabel("DIABETES TESTED NEGATIVE");
-   la.setBounds(140,50, 300,100);  
-   f8.add(la);
-   /* ***************************************** */
+ //PAGE TO DISPLAY IF CANCER TESTED POSITIVE (FRAMEf7)
+    la = new JLabel("CANCER TESTED POSITIVE . ");
+    la.setBounds(140,10, 300,10);  
+    lb=new JLabel("YOUR DATA HAS BEEN RECORDED WITH US .");
+    lb.setBounds(140,30, 300,10); 
+    f5.add(la);
+    f5.add(lb);
+
+    /* ***************************************** */
+ //PAGE TO DISPLAY IF CANCER TESTED POSITIVE (FRAMEf7)
+    la = new JLabel("CANCER TESTED NEGATIVE .");
+    la.setBounds(200,20, 300,10);  
+    lb=new JLabel("YOUR DATA HAS BEEN RECORDED WITH US .");
+    lb.setBounds(200,40, 300,10); 
+    f6.add(la);
+    f6.add(lb);
    
+    /* ***************************************** */
+  //PAGE TO DISPLAY IF DIABETES TESTED POSITIVE (FRAMEf7)
+    la = new JLabel("DIABETES TESTED POSITIVE .");
+    la.setBounds(200,20, 300,10);  
+    lb=new JLabel("YOUR DATA HAS BEEN RECORDED WITH US .");
+    lb.setBounds(200,40, 300,10); 
+    
+    f7.add(la);
+    f7.add(lb);
+    /* ***************************************** */
+  //PAGE TO DISPLAY IF DIABETES TESTED POSITIVE (FRAMEf7)
+     la = new JLabel("DIABETES TESTED NEGATIVE .");
+     la.setBounds(200,20, 300,10);  
+     lb=new JLabel("YOUR DATA HAS BEEN RECORDED WITH US .");
+     lb.setBounds(200,40, 300,10); 
+     
+     f8.add(la);
+     f8.add(lb);
+     
+     /* ***************************************** */
+     
    
     b1.addActionListener(this);
     b2.addActionListener(this);
+    b3.addActionListener(this);
     b4.addActionListener(this);
+    back1.addActionListener(this);
+    back2.addActionListener(this);
+    back3.addActionListener(this);
+    
+    
     
     f1.setLayout(null);
     f2.setLayout(null);
@@ -373,36 +414,163 @@ public class UI implements ActionListener{
     
 }  
 public static void main(String[] args)throws Exception {  
-    new UI();  
+    new BB();  
 }
 
-
 @Override
-public void actionPerformed(ActionEvent e) {
-	// TODO Auto-generated method stub
-	String lbl = e.getActionCommand();
+public void actionPerformed(ActionEvent e)  {
 	
+	// 
+	String lbl = e.getActionCommand();
+
+	if (lbl.equalsIgnoreCase("back") && flag==1)
+	{
+		f2.setVisible(false);
+		f1.setVisible(true);
+		flag=0;
+		
+	}
+	if (lbl.equalsIgnoreCase("back") && flag==2)
+	{
+		f3.setVisible(false);
+		f2.setVisible(true);
+		flag--;
+		
+	}
+	if (lbl.equalsIgnoreCase("back") && flag==3)
+	{
+		f4.setVisible(false);
+		f2.setVisible(true);
+		flag-=2;
+	}
+	
+
 	if (lbl.equalsIgnoreCase("sign in"))
 	{
 		f2.setVisible(true);
 		f1.setVisible(false);
-		
-	}
+		flag++;
+	
+}
 	if (lbl.equalsIgnoreCase("submit details"))
 	{
+		Connection con=null;
+		PreparedStatement pstmt=null;
+		String aaa="";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tvh","root","");
+			pstmt=con.prepareStatement("select max(pid) from patient");
+			ResultSet result=pstmt.executeQuery();
+			while(result.next()) {
+			aaa=result.getString(1);
+			
+			} 
+			aaa=""+(Integer.parseInt(aaa)+1);
+			pstmt=con.prepareStatement("insert into patient values(?,?,?,?)");
+			pstmt.setString(1, aaa);
+			pstmt.setString(2,pname.getText());
+			pstmt.setString(3, phone.getText());
+			pstmt.setString(4, p_age.getText());
+			
+			 int x=pstmt.executeUpdate();
+			  con.close();
+			
+		} catch (ClassNotFoundException e1) {
+			
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		String temp=p_age.getText();
 		if(rb1.isSelected()){   
 		f3.setVisible(true);
 		f2.setVisible(false);
 		f1.setVisible(false);
+		flag++;
+		
+		
 		}
 		else if(rb2.isSelected())
 		{
+			age.setText(temp);
 			f4.setVisible(true);
 			f2.setVisible(false);
 			f1.setVisible(false);
+			flag+=2;
+			
 		}
 	}
-		
-}
+	
+	if(lbl.equalsIgnoreCase("submit") && rb1.isSelected())
+	{
+		CancerModelLoading dm=new CancerModelLoading();
+		short ans=-1;
+		try {
+			ans = dm.ans_calc(bg1.getSelection().getActionCommand()+ "," +
+					 bg2.getSelection().getActionCommand() + "," +
+					 bg3.getSelection().getActionCommand() + "," +
+					 bg9.getSelection().getActionCommand() + "," +
+					 bg4.getSelection().getActionCommand() + "," +
+					 bg5.getSelection().getActionCommand() + "," +
+					 bg6.getSelection().getActionCommand() + "," +
+					 bg7.getSelection().getActionCommand() + "," +
+					 bg8.getSelection().getActionCommand()
+					);
+			
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
 
-}  
+
+		if(ans==1) {
+			f5.setVisible(true);
+			f4.setVisible(false);
+			f2.setVisible(false);
+			f1.setVisible(false);
+			}
+		if(ans==0) {
+			f6.setVisible(true);
+			f4.setVisible(false);
+			f2.setVisible(false);
+			f1.setVisible(false);
+			}
+		
+	}
+	if(lbl.equalsIgnoreCase("submit") && rb2.isSelected())
+	{
+		
+		
+		DiabetesModelLoading dm=new DiabetesModelLoading();
+		short ans=-1;
+		try {
+			ans = dm.ans_calc(nop.getText()+ "," +pgc.getText()+"," +bp.getText()+"," +tsf.getText()+"," +si.getText()+"," +bmi.getText()+"," +dpf.getText()+"," +age.getText());
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+
+
+		if(ans==1) {
+			f7.setVisible(true);
+			f4.setVisible(false);
+			f2.setVisible(false);
+			f1.setVisible(false);
+			}
+		if(ans==0) {
+			f8.setVisible(true);
+			f4.setVisible(false);
+			f2.setVisible(false);
+			f1.setVisible(false);
+			}
+			
+	   }
+	}
+
+
+	 
+	
+}
