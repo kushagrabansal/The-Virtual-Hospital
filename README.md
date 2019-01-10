@@ -16,9 +16,24 @@ This is a mini project I've taken up in order to learn some basics of swings in 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 
-Data preprocessing on Wisconsin breast cancer dataset: 
+## Data preprocessing on Wisconsin breast cancer dataset: 
 
-## ![alt text](https://github.com/kushagrabansal/The-Virtual-Hospital/blob/master/TVH/image.png)
+![alt text](https://github.com/kushagrabansal/The-Virtual-Hospital/blob/master/TVH/image.png)
 
-Homepage
+## Homepage
+
+![alt text](https://github.com/kushagrabansal/The-Virtual-Hospital/blob/master/TVH/image%20(3).png)
+
+
+## Diabetes Panel
+
+![alt text](https://github.com/kushagrabansal/The-Virtual-Hospital/blob/master/TVH/image%20(2).png)
+
+## Breast Cancer Panel
+
+![alt text](https://github.com/kushagrabansal/The-Virtual-Hospital/blob/master/TVH/image%20(1).png)
+
+
+
+
 
